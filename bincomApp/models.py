@@ -129,3 +129,8 @@ class Ward(models.Model):
     class Meta:
         db_table = 'ward'
 
+
+
+class Test(models.Model):
+    pass
+
