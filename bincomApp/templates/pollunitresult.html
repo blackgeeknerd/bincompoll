@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <a type="button" class="btn btn-success" href="{%url 'new_poll_unit' %}">Create</a>
+    <h4>Polling Unit Result List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Polling Unit ID</th>
+                
+                <th scope="col">Polling Unit Score</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.polling_unit_uniqueid }}</td>
+               
+                <td>{{ result.party_score }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+</div>
+{% endblock %}
