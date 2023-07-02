@@ -1,6 +1,5 @@
 
 from django.db import models
-from datetime import datetime
 
 
 class Agentname(models.Model):
@@ -101,6 +100,7 @@ class PollingUnit(models.Model):
     lat = models.CharField(max_length=255, blank=True, null=True)
     long = models.CharField(max_length=255, blank=True, null=True)
     entered_by_user = models.CharField(max_length=50, blank=True, null=True)
+    #auto now on submit so the engine grabs the current time stamp
     date_entered = models.DateTimeField(auto_now_add=True, blank=True, null=True,)
     user_ip_address = models.CharField(max_length=50, blank=True, null=True)
 
@@ -130,7 +130,4 @@ class Ward(models.Model):
         db_table = 'ward'
 
 
-
-class Test(models.Model):
-    pass
 

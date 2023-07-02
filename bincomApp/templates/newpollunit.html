@@ -45,9 +45,6 @@
           <div class="col"> 
             {% render_field form.entered_by_user class="form-control" placeholder="Staff Name" type="text" %}
           </div>
-          <div class="col">
-            {% render_field form.user_ip_address class="form-control" placeholder="Ip Address" type="text" %}
-          </div>
         </div>
         <!-- {{form.as_p}} -->
         <a type="button" class="btn btn-danger" href="{%url 'home' %}">Cancel</a>
