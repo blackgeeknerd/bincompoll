@@ -15,20 +15,17 @@ def getUserIP(request):
 
 #Create new poll unit
 def New_PollUnit(request):
-
-    ip = getUserIP(request)
-    
     if request.method == "POST":
+     ip = getUserIP(request)
+     form = NewPollingUnit(request.POST)
     
-        form = NewPollingUnit(request.POST)
-    
-    if form.is_valid():
-      form_save = form.save(commit=False)
-      form_save.user_ip_address = ip
-      form_save.save()
-      form = NewPollingUnit()
+     if form.is_valid():
+            form_save = form.save(commit=False)
+            form_save.user_ip_address = ip
+            form_save.save()
+            form = NewPollingUnit()
     else:
-      form = NewPollingUnit()
+            form = NewPollingUnit()
     return render(request, 'newpollunit.html', {'form': form})
 
 

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7(gh5v*g4dc_p8-*kn*@7n_htl@w3@q8k&vjyxac7u10&4@0=6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://bincompoll.pythonanywhere.com/', '*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,12 +77,27 @@ WSGI_APPLICATION = 'bincomPro.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # } ,
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'bincompoll$default',
+    #     'USER': 'bincompoll',
+    #     'PASSWORD': 'striker147',
+    #     'HOST': 'bincompoll.mysql.pythonanywhere-services.com',
+    #     'PORT': '3306',
+    #     'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+    # }
+
+    #for development
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bincompoll$default',
-        'USER': 'bincompoll',
-        'PASSWORD': 'striker147',
-        'HOST': 'bincompoll.mysql.pythonanywhere-services.com',
+        'NAME': 'bincomphptest',
+        'USER': 'root',
+        'PASSWORD': 'striker',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
