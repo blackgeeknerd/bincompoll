@@ -13,7 +13,7 @@ urlpatterns = [
     
     path('createpollunit/', views.New_PollUnit, name='new_poll_unit'),
     path('pollunitresults', views.PollUnitResult, name='poll-unit-results'),
-    path('lgscore/', views.ResultByLg,),
+    path('lgscore/', views.ResultByLg, name='lga_score'),
 
 ]
 

@@ -2,12 +2,18 @@
 {% block content %}
 <div class="card-body">
     <a type="button" class="btn btn-success" href="{%url 'new_poll_unit' %}">Create</a>
+    <a type="button" class="btn btn-success" href="{%url 'poll-unit-results' %}">Poll Unit Score</a>
+
     <h4>Results by Local Government</h4>
 
     <form method = "GET">
        
-        {{ form }}
-        <input type = "submit" value = "Submit">
+        <select id="local_govt_name" onChange="getLgScore()" name="local_govt_name" class="selectpicker" data-title="Select LG">
+            {% for x,y in form.fields.local_govt_name.choices %}
+               <option value="{{ x }}"{% if form.fields.local_govt_name.value == x %} selected{% endif %}>{{ y }}</option>
+            {% endfor %}
+        </select>
+
     </form>
 
     <hr>
@@ -33,4 +39,11 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    function getLgScore(){
+        const local_govt_name = document.getElementById("local_govt_name").value
+        window.location.href = "{% url 'lga_score' %}" + "?local_govt_name=" + local_govt_name
+    }
+</script>
 {% endblock %}

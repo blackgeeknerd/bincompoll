@@ -38,19 +38,20 @@ def PollUnitResult(request):
 def ResultByLg(request):  
     
 
+
+    # if request.method == "GET":
     form = LocalGovtNames()
 
-    # if request.method == "POST":
 
-    if request.GET.get('type') == "submit":
+    # if request.GET.get('type') == "submit":
     #         # test = form.cleaned_data
-        test = request.POST.get('local_govt_name', '')
+    test = request.GET.get('local_govt_name', '')
 
-        execute = 'select result_id, lga.lga_id, lga_name, sum(party_score) as score from polling_unit, announced_pu_results, lga where lga.lga_id = polling_unit.lga_id and lga_name = %s group by lga.lga_id order by lga.lga_id;'
+    execute = 'select result_id, lga.lga_id, lga_name, sum(party_score) as score from polling_unit, announced_pu_results, lga where lga.lga_id = polling_unit.lga_id and lga_name = %s group by lga.lga_id order by lga.lga_id;'
                 
-        results = AnnouncedPuResults.objects.select_related().raw(execute , [test])
-        print(test)
-        return render(request,"displaylgscore.html",{'results':results}) 
-    return render(request,"displaylgscore.html", {'form':form}) 
+    results = AnnouncedPuResults.objects.select_related().raw(execute , [test])
+    print(test)
+    return render(request,"displaylgscore.html",{'results':results, 'form':form}) 
+    # return render(request,"displaylgscore.html", {'form':form}) 
 
 
