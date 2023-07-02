@@ -87,18 +87,6 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
-
-     #for development
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'bincomphptest',
-    #     'USER': 'root',
-    #     'PASSWORD': 'striker',
-    #     'HOST': 'localhost',
-    #     'PORT': '3306',
-    #     'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
-    # }
-
    
 }
 
