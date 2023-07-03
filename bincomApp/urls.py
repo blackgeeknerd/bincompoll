@@ -10,19 +10,9 @@ from bincomApp import views
 # app_name = 'bincomApp'
 urlpatterns = [
     path('', views.PollUnitResult, name='home' ),
-    
     path('createpollunit/', views.New_PollUnit, name='new_poll_unit'),
     path('pollunitresults', views.PollUnitResult, name='poll-unit-results'),
     path('lgscore/', views.ResultByLg, name='lga_score'),
 
 ]
 
-
-
-
-
-
-
-# if settings.DEBUG:
-#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
